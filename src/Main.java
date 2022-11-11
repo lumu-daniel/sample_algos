@@ -14,6 +14,10 @@ public class Main {
         System.out.println(answerTwo(new int[]{19, 7, 12, 32, 11}));
         System.out.println(answerTwo(new int[]{11, 14, 12, 31, 5}));
         System.out.println(answerTwo(new int[]{19, 20}));
+        System.out.println(answerThree(new int[]{5, 4, 3, 2, 3, 4, 6, 1}));
+        System.out.println(answerThree(new int[]{11, 11}));
+        System.out.println(answerThree(new int[]{7, 2, 18}));
+        System.out.println(answerThree(new int[]{7, 10, 12, 14}));
     }
 
     //Let a = {5, 7, 8, 10, 12, 4, 1}. Then b[0] = 5, b[1] = 7, b[2] = 5 + 8 = 13, b[3] = 10, b[4] =
@@ -72,7 +76,22 @@ public class Main {
     //(1) It has even number of elements
     //(2) Sum of all the numbers in the first half of the array is equal to the sum of all numbers
     //in the second half of the array.
-    private static int questionThree(){
-
+    private static int answerThree(int [] a){
+        int result = 0;
+        if(a.length%2==0){
+            int sum1 = 0;
+            int sum2 = 0;
+            for (int i=0; i<a.length; i++){
+                if(i<a.length/2){
+                    sum1+=a[i];
+                }else{
+                    sum2+=a[i];
+                }
+            }
+            if(sum1==sum2){
+                result = 1;
+            }
+        }
+        return result;
     }
 }
